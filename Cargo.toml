@@ -15,3 +15,9 @@ panic = "abort" # disable stack unwinding on panic
 
 [dependencies]
 bootloader = "0.9.23" # This crate implements a basic BIOS bootloader without any C dependencies, just Rust and inline assembly.
+volatile = "0.2.6" # This crate provides a Volatile wrapper type with read and write methods. These methods internally use the read_volatile and write_volatile functions of the core library and thus guarantee that the reads/writes are not optimized away.
+spin = "0.5.2" # To use a spinning mutex
+
+[dependencies.lazy_static] # This crate provides a lazy_static! macro that defines a lazily initialized static.
+version = "1.0"
+features = ["spin_no_std"] # We need the spin_no_std feature, since we don’t link the standard library.
