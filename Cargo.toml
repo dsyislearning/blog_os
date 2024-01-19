@@ -14,3 +14,4 @@ panic = "abort" # disable stack unwinding on panic
 panic = "abort" # disable stack unwinding on panic
 
 [dependencies]
+bootloader = "0.9.23" # This crate implements a basic BIOS bootloader without any C dependencies, just Rust and inline assembly.
